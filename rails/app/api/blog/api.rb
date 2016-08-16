@@ -9,5 +9,11 @@ module Blog
         Article.all
       end
     end
+
+    resource :authors do
+      get do
+        Author.all
+      end
+    end
   end
 end
