@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Article.destroy_all
+Author.destroy_all
+
 10.times do
-  Article.create(title: Faker::Book.title)
+  author = Author.create(name: Faker::Name.name)
+  Article.create(title: Faker::Book.title, author: author)
 end
