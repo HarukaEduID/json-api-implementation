@@ -32,6 +32,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Framework for creating REST-like APIs
+gem 'grape', '~> 0.17.0'
+
+# Disables the security feature of strong_params at the model layer,
+# allowing us the use of Grape's own params validation instead
+gem 'hashie-forbidden_attributes', '~> 0.1.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -43,5 +50,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Generate fake data
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
 
